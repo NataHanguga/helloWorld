@@ -14,7 +14,7 @@ function Pet(name) {
         clock5: setInterval(depleteHap, interval),
         gameover: 0
     }
-
+    // document.getElementById("BtnKill").dblclick = pet.hi();
     document.getElementById("BtnHunger").onclick = fillHunger;
     document.getElementById("BtnBladder").onclick = fillBladder;
     document.getElementById("BtnFun").onclick = fillFun;
@@ -59,6 +59,7 @@ function Pet(name) {
         pet.bladder = 0;
         pet.energy = 0;
         gameovercheck();
+        delete pet;
     }
 
     function fillHunger() {
@@ -121,7 +122,16 @@ function Pet(name) {
             document.getElementById('hungger').innerHTML = "Your pet is starving!";
             clearInterval(pet.clock1);
             gameovercheck();
-        } else if (pet.hunger == 20) {
+        } else if (pet.hunger == 100) {
+            document.getElementById('hungger').innerHTML = "Your pet has full stomach... ohh.. so hard";
+            pet.hunger--;
+        } else if (pet.hunger == 75) {
+            document.getElementById('hungger').innerHTML = "Your pet feels fine)";
+            pet.hunger--;
+        } else if (pet.hunger == 50) {
+            document.getElementById('hungger').innerHTML = "Your pet won`t mind having a bite)";
+            pet.hunger--;
+        } else if (pet.hunger == 25) {
             document.getElementById('hungger').innerHTML = "Your pet will be starving soon!";
             pet.hunger--;
         } else if (pet.hunger != 0)
@@ -134,7 +144,16 @@ function Pet(name) {
             document.getElementById('bladder').innerHTML = "Your pet has become sick!";
             clearInterval(pet.clock2);
             gameovercheck();
-        } else if (pet.bladder == 20) {
+        } else if (pet.bladder == 100) {
+            document.getElementById('bladder').innerHTML = "Your pet is blissfull))";
+            pet.bladder--;
+        } else if (pet.bladder == 75) {
+            document.getElementById('bladder').innerHTML = "Your pet feels as never before)";
+            pet.bladder--;
+        } else if (pet.bladder == 50) {
+            document.getElementById('bladder').innerHTML = "Your pet will soon have to go to the toilet!";
+            pet.bladder--;
+        } else if (pet.bladder == 25) {
             document.getElementById('bladder').innerHTML = "Your pet want pipi now!";
             pet.bladder--;
         } else if (pet.bladder != 0)
@@ -148,7 +167,16 @@ function Pet(name) {
             document.getElementById('fun').innerHTML = "Your pet is depressed!";
             clearInterval(pet.clock3);
             gameovercheck();
-        } else if (pet.fun == 20) {
+        } else if (pet.fun == 100) {
+            document.getElementById('fun').innerHTML = "Your pet is the happiest animal in the world)))";
+            pet.fun--;
+        } else if (pet.fun == 75) {
+            document.getElementById('fun').innerHTML = "Your pet is funny now)";
+            pet.fun--;
+        } else if (pet.fun == 50) {
+            document.getElementById('fun').innerHTML = "Your pet wants play with you)";
+            pet.fun--;
+        } else if (pet.fun == 25) {
             document.getElementById('fun').innerHTML = "Your pet is bored!";
             pet.fun--;
         } else if (pet.fun != 0)
@@ -162,7 +190,16 @@ function Pet(name) {
             document.getElementById('energy').innerHTML = "Your pet is tired!";
             clearInterval(pet.clock4);
             gameovercheck();
-        } else if (pet.energy == 20) {
+        } else if (pet.energy == 100) {
+            document.getElementById('energy').innerHTML = "Your pet has full battery))";
+            pet.energy--;
+        } else if (pet.energy == 75) {
+            document.getElementById('energy').innerHTML = "Your pet has so many energy)";
+            pet.energy--;
+        } else if (pet.energy == 50) {
+            document.getElementById('energy').innerHTML = "Your pet will want go to the his bed soon)";
+            pet.energy--;
+        } else if (pet.energy == 25) {
             document.getElementById('energy').innerHTML = "Your pet is done!";
             pet.energy--;
         } else if (pet.energy !== 0)
@@ -175,7 +212,16 @@ function Pet(name) {
             document.getElementById('happy').innerHTML = "Your pet can to do suiside!";
             clearInterval(pet.clock5);
             gameovercheck();
-        } else if (pet.happy == 20) {
+        } else if (pet.happy == 100) {
+            document.getElementById('happy').innerHTML = "Your pet gives happy all the world)))";
+            pet.happy--;
+        } else if (pet.happy == 75) {
+            document.getElementById('happy').innerHTML = "Your pet rejoices over everything)";
+            pet.happy--;
+        } else if (pet.happy == 50) {
+            document.getElementById('happy').innerHTML = "Your pet wants to handle)";
+            pet.happy--;
+        } else if (pet.happy == 25) {
             document.getElementById('happy').innerHTML = "Your pet hasn't happy!";
             pet.happy--;
         } else if (pet.happy !== 0)
@@ -183,7 +229,6 @@ function Pet(name) {
         document.getElementById("HappinessBar").value = pet.happy;
 
     }
-
 
 }
 
